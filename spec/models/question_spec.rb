@@ -1,5 +1,20 @@
 require 'spec_helper'
 
 describe Question do
-  pending "add some examples to (or delete) #{__FILE__}"
+  before(:each) do
+    @user=Factory(:user)
+    @attr = {:genre => "History", :text => "Who shot JFK?"}
+  end
+  
+#it does not need to have a user_id
+  
+  describe "user association" do
+    
+    it "should have the right user" do
+      question=@user.questions.build(@attr)
+      question.creator.should == @user
+    end
+    
+  end
+  
 end

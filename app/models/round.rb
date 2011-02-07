@@ -14,7 +14,10 @@
 
 class Round < ActiveRecord::Base
   belongs_to :game
-  belongs_to :user
-  has_many :question_token
+  belongs_to :creator, :class_name => "User"
+  has_many :question_tokens
   has_many :questions, :through => :question_token
+  
+#  validates :game_id, :presence => true
+  
 end

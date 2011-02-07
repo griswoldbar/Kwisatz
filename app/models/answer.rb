@@ -13,4 +13,6 @@
 
 class Answer < ActiveRecord::Base
   belongs_to :question
+  validates :question_id, :numericality => { :only_integer => true }
+  
 end

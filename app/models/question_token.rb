@@ -14,4 +14,5 @@
 class QuestionToken < ActiveRecord::Base
   belongs_to :question
   belongs_to :round
+  validates :question_id, :numericality => {:only_integer => true}
 end

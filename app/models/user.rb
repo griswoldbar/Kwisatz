@@ -15,7 +15,9 @@
 #
 
 class User < ActiveRecord::Base
-  has_many :games
-  has_many :rounds
-  has_many :questions
+  has_many :games, :foreign_key => "creator_id"
+  has_many :rounds, :foreign_key => "creator_id"
+  has_many :questions, :foreign_key => "creator_id"
+  
+  validates :email, :presence => true
 end
