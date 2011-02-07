@@ -15,6 +15,6 @@
 class Question < ActiveRecord::Base
   has_many :answers
   has_many :question_tokens
-  has_many :rounds, :through => :question_token
+  has_many :rounds, :through => :question_tokens
   belongs_to :creator, :class_name => "User"
 end

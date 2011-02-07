@@ -12,7 +12,8 @@
 
 class Game < ActiveRecord::Base
   
-  has_many :rounds
+  has_many :round_tokens
+  has_many :rounds, :through => :round_tokens
   belongs_to :creator, :class_name => "User"
   
   validates :name, :presence => true

@@ -27,7 +27,5 @@ Factory.define :answer do |answer|
 end
 
 Factory.define :round do |round|
-  round.position 1
   round.association :creator, :factory => :user
-  round.association :game
 end
