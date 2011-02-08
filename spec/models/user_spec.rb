@@ -179,13 +179,6 @@ describe User do
 
   end
 
-
-
-
-
-
-
-
   describe "game association" do
     it "should have a games attribute" do
       @user.should respond_to(:games)
