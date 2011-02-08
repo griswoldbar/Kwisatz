@@ -11,8 +11,7 @@
 #  name       :string(255)
 #
 
-class JeopardyRound < Round
+class PubquizRound < Round
   
-
   
 end

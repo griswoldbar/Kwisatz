@@ -1,5 +1,5 @@
 # == Schema Information
-# Schema version: 20110207220123
+# Schema version: 20110208104019
 #
 # Table name: rounds
 #
@@ -8,6 +8,7 @@
 #  creator_id :integer
 #  created_at :datetime
 #  updated_at :datetime
+#  name       :string(255)
 #
 
 class Round < ActiveRecord::Base
@@ -17,7 +18,5 @@ class Round < ActiveRecord::Base
   has_many :questions, :through => :question_tokens
   has_many :round_tokens
   has_many :games, :through => :round_tokens
-  
-#  validates :game_id, :presence => true
-  
+    
 end
