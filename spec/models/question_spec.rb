@@ -2,7 +2,7 @@ require 'spec_helper'
 
 describe Question do
   before(:each) do
-    @user=Factory(:user)
+    @user = Factory(:user, :email => Factory.next(:email))
     @attr = {:genre => "History", :text => "Who shot JFK?"}
     @question=Factory(:question)
   end

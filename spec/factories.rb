@@ -1,8 +1,8 @@
 Factory.define :user do |user|
-  user.first_name   "Dorky"
-  user.last_name    "McDork"
+  user.name     "Dorky McDork"
   user.email        "dork@dork.com"
-  user.encrypted_password     "wibble"
+  user.password     "wibbleblib"
+  user.password_confirmation "wibbleblib"
 end
 
 Factory.sequence :email do |n|
