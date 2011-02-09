@@ -4,9 +4,7 @@ describe Round do
   before(:each) do
     @round=Round.new
   end
-  
-
-   
+     
   describe "user association" do
       before(:each) do
         @user=Factory(:user)
@@ -31,10 +29,12 @@ describe Round do
     end
   end
   
-    describe "questions association" do
-    it "should have an questions attribute" do
+  describe "questions association" do
+    it "should have a questions attribute" do
       @round.should respond_to(:questions)
     end
+    
+
   end
   
     describe "games association" do

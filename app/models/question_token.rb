@@ -15,4 +15,8 @@ class QuestionToken < ActiveRecord::Base
   belongs_to :question
   belongs_to :round
   validates :question_id, :numericality => {:only_integer => true}
+  validates :round_id, :numericality => {:only_integer => true}
+  validates :position, :numericality => {:only_integer => true}
+  validates_uniqueness_of :question_id, :scope => :round_id
+  validates_uniqueness_of :position, :scope => :round_id
 end

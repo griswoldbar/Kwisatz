@@ -8,7 +8,7 @@ digraph models_diagram {
 	"QuestionToken" [shape=Mrecord, label="{QuestionToken|position :integer\lcreated_at :datetime\lupdated_at :datetime\l}"]
 	"Round" [shape=Mrecord, label="{Round|created_at :datetime\lupdated_at :datetime\lname :string\l}"]
 	"RoundToken" [shape=Mrecord, label="{RoundToken|position :integer\lcreated_at :datetime\lupdated_at :datetime\l}"]
-	"User" [shape=Mrecord, label="{User|first_name :string\llast_name :string\lemail :string\lsalt :string\lencrypted_password :string\ladmin :boolean\lcreated_at :datetime\lupdated_at :datetime\l}"]
+	"User" [shape=Mrecord, label="{User|name :string\lemail :string\lsalt :string\lencrypted_password :string\ladmin :boolean\lcreated_at :datetime\lupdated_at :datetime\l}"]
 	"Game" -> "RoundToken" [arrowtail=crow, arrowhead=dot, dir=both]
 	"Game" -> "Round" [arrowtail=crow, arrowhead=crow, dir=both]
 	"Round" -> "JeopardyRound" [label="", arrowhead="none", arrowtail="onormal"]

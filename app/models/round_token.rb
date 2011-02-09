@@ -15,4 +15,10 @@ class RoundToken < ActiveRecord::Base
 
   belongs_to :game
   belongs_to :round
+  validates :game_id, :numericality => {:only_integer => true}
+  validates :round_id, :numericality => {:only_integer => true}
+  validates :position, :numericality => {:only_integer => true}
+
+  validates_uniqueness_of :round_id, :scope => :game_id
+  validates_uniqueness_of :position, :scope => :game_id
 end
