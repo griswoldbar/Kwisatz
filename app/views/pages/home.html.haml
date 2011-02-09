@@ -1,4 +1,14 @@
-%h1
-	Pages#home
-%p
-	Find me in app/views/pages/home.html.erb
+- if signed_in?
+  %table{:class => "front", :summary => "For signed in users"}
+    %tr
+      %td(class="main")
+        %h1 Hi there
+      %td(class="sidebar round")
+        %h1 Some Kwisatz info will go here
+- else
+  %h1 Kwisatz
+  %p
+    This is the home page for Kwisatz, a web application for generating quiz shows
+  = link_to "Sign up now!", signup_path, :class => "signup_button round"
+
+	
