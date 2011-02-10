@@ -1,0 +1,3 @@
+class StraightQuestion < Question
+  
+end
