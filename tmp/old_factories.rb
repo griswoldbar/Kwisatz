@@ -27,5 +27,5 @@ Factory.define :answer do |answer|
 end
 
 Factory.define :round do |round|
-  round.name "History kwiz"
+  round.association :creator, :factory => :user
 end

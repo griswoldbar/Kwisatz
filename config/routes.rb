@@ -1,7 +1,15 @@
 Kwisatz::Application.routes.draw do
 
   resources :users
-
+  resources :rounds
+  resources :questions do
+    member do
+      get :reveal
+    end
+  end
+  
+  
+  
   resources :sessions,   :only => [:new, :create, :destroy]
 
   
