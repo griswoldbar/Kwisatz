@@ -12,5 +12,7 @@
 class Round < ActiveRecord::Base
 
   has_many :questions
+  attr_accessor :num
+  
 end
 

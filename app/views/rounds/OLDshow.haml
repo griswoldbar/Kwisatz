@@ -1,0 +1,16 @@
+!!! Strict
+
+%table{:id => "id-quiz-round-1"}
+  %tr
+    - @genres.each do |genre|
+      %td
+        = genre
+  - q=0
+  - 5.times do |i|
+    %tr
+      - 6.times do
+        - q+=1
+        %td
+          %span
+            = link_to "$#{(i+1)*100}", question_path(@round.questions.find_by_id(q))
+    
