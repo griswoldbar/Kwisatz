@@ -1,0 +1,4 @@
+%li
+  = link_to round.name, round
+-# <% if current_user.admin?%>
+  = link_to "delete", round, :method => :delete, :confirm => "You sure?", :title => "Delete #{round.name}"

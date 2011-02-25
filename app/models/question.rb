@@ -1,17 +1,17 @@
 # == Schema Information
-# Schema version: 20110220124517
+# Schema version: 20110224204344
 #
 # Table name: questions
 #
 #  id         :integer         not null, primary key
 #  text       :string(255)
 #  answer     :string(255)
-#  round_id   :integer
 #  created_at :datetime
 #  updated_at :datetime
 #
 
 class Question < ActiveRecord::Base
 
-  belongs_to :round
+  has_many :round_questions
+  has_many :rounds, :through => :round_questions
 end

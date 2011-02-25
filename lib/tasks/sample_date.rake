@@ -11,6 +11,10 @@ end
 
 def make_rounds
   round1=Round.create!(:name => "History")
+  round2=Round.create!(:name => "Blah")
+  40.times do |i|
+    Round.create!(:name => "Round #{i}")
+  end
 end
 
 def make_questions

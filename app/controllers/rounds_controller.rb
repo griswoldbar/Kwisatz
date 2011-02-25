@@ -6,6 +6,9 @@ class RoundsController < ApplicationController
     @genres=["History", "Geography", "Cinema", "Science", "Literature", "Music"]
   end
 
-
+  def index
+    @rounds = Round.paginate(:page => params[:page])
+    @title = "All rounds"
+  end
 
 end

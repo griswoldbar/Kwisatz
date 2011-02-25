@@ -11,8 +11,8 @@
 
 class Round < ActiveRecord::Base
 
-  has_many :questions
-  attr_accessor :num
+  has_many :round_questions
+  has_many :questions, :through => :round_questions
   
 end
 
