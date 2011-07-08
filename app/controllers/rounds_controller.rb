@@ -10,5 +10,28 @@ class RoundsController < ApplicationController
     @rounds = Round.paginate(:page => params[:page])
     @title = "All rounds"
   end
+  
+  def new
+    @round=Round.new
+    @title = "Create new round"
+    30.times do
+      @round.questions.new
+    end
+  end
+
+  def create
+    @round = Round.new(params[:round])
+    30.times do |i|
+      @round.questions[i].create!
+    end
+    if @round.save
+      flash[:success] = "Round created"
+      redirect_to @round
+    else
+      @title = "Sign up"
+      render 'new'
+    end
+    
+  end
 
 end

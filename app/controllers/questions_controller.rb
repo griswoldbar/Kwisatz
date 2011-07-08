@@ -10,4 +10,14 @@ class QuestionsController < ApplicationController
     render :layout => false
   end
   
+  def new
+    
+    
+  end
+
+  def create
+    
+    
+  end
+  
 end

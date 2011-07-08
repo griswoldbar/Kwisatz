@@ -4,6 +4,6 @@
     Back to Board
 -# link_to 'Back to board', @question.round
 %br
-  %span{:onclick=> "ShowAnswer('#{reveal_question_path}')"}
+  %span{:onclick=> "ShowAnswer('#{reveal_question_path}','#{@question.id}')"}
     Show answer
 -# link_to "Reveal", reveal_question_path

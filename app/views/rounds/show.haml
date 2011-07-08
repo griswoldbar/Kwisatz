@@ -1,39 +1,4 @@
 !!! Strict
-:javascript
-  var currentQuestion;
-  function ShowQuestion(obj,questionPath)
-  {
-    currentQuestion=obj
-    $.ajax({ 
-      url: questionPath,
-      type: "GET",
-      success: function(data) { 
-        $("#id-quiz-round-1").hide(); 
-        $("#reply").html(data);
-        $("#reply").show();
-      },
-      error: function(){alert("failed")}
-    })
-    return false;
-  } 
-  function ShowAnswer(revealPath)
-  {
-    $(currentQuestion).hide();
-    $.ajax({
-      url: revealPath,
-      type: "GET",
-      success: function(data) {  
-        $("#reply").html(data);
-      },
-      error: function(){alert("failed")}
-    })    
-  }
-  function ShowQuestionBoard()
-  {
-    $("#id-quiz-round-1").show();
-    $("#reply").hide();
-
-  }
 %table{:id => "id-quiz-round-1"}
   %tr
     - @genres.each do |genre|
@@ -45,7 +10,8 @@
       - 6.times do
         %td
           - question_path = question_path(@round.questions[q])
-          %span{:id => "id-question-#{q}",:onclick => "ShowQuestion(this,'#{question_path}')"}
+          - question_id = @round.questions[q].id
+          %span{:id => "id-question-#{question_id}",:onclick => "ShowQuestion(this,'#{question_path}')"}
             = "$#{(i+1)*100}"
         - q+=1
 #reply
