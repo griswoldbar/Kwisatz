@@ -1,0 +1,32 @@
+body {
+  font-family: "Gil Sans", Verdana;
+	background-color: #FAC;
+}
+
+.menu {  
+	ul {
+    margin: 0;
+    padding: 0;
+  
+	  li {
+      display: inline-block;
+      border-right: 1px solid #CCC;
+			-moz-border-radius:    10px;
+      -webkit-border-radius: 10px;
+      border-radius:         10px;
+
+			a {
+        text-decoration: none;
+			}
+			a:hover {
+        text-decoration: underline;
+				color:white;
+				font-size:18px;
+			}
+		}
+	}
+}
+
+.top-menu {
+  float:right;
+}
