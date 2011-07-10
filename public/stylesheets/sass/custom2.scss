@@ -6,17 +6,27 @@ $black: #333333;
 $white: #ffffff;
 $quiz-background: #003399;
 $quiz-text: #ffff33;
-$quiz-highlight:#cc66ff;
+$quiz-text-highlight: #ffff66;
+$quiz-highlight:#0066ff;
 
+html, body, .container, section.round {
+  height:100%;
+  margin: 0;
+  padding: 0;
+  border: none;
+}
 
 
 body {
   font: {
     family: Geneva;
-
   }
   color: $black;
-	background-color: $neutral ;	
+	background-color: $dark;
+}
+
+.container {
+  background-color: $dark;
 }
 
 /* header and footer navigation menus */
@@ -71,49 +81,97 @@ footer {
 /* jeopardy game table */
 
 table.jeopardy {
-  border: 25px groove #cc9933;
+
+  border: 25px solid #cc9933;
+  background-color: $white;
   width: 90%;
+  height: 90%;
   margin-left:auto;
   margin-right:auto;
   cursor: move;
+  -moz-border-radius:  20px;
+  -webkit-border-radius: 20px;
+
+
 
   tr {
     text-align:center;
+    
     td {
       background-color: $quiz-background;
       color: $quiz-text;
       font-weight: bold;
       font-size: 40px;
+      text-shadow: rgb(0,0,0) 2px 2px 2px;
       text-transform: uppercase;
+      -moz-border-radius:  10px;
+      -webkit-border-radius: 10px;
       
       border: 4px solid #000033;
       padding: 0px;
-      width: 15%;
-      height: 80px;
       
       &:hover {
         background-color: $quiz-highlight;
+        color: $quiz-text-highlight;
+
       }
     }
     
   }
 
   tr.categories {
+  
+
+      
     td{
       color: $white;
-      border-bottom: 25px groove #cc9933;
-      padding: 0px;
       font-size: 100%;
-      
+      border-width: 8px;
+
       &:hover {
         background-color: $quiz-background;
+        color: $white;
       }
-
-    }
-  
-    
+    }    
   }
+}
 
+/* question pop-ups */
+
+div.question {
+  background-color: $quiz-background;
+  color: $white;
+  font-weight: bold;
+  font-size: 40px;
+  text-transform: uppercase;
+  -moz-border-radius:  10px;
+  -webkit-border-radius: 10px;
+  padding: 20px;
+  padding-top: 40px;
+
+
+  
+  ul {
+    padding: 0px;
+    margin-top:20px;
+    font-weight: normal;
+    font-size: 15px;
+    
+    li {
+      display: inline-block;
+      margin: 5px;
+      &:hover {
+        color: $highlight;
+      }   
+    }
+  }
+}
+
+.blockMsg {
+  -moz-border-radius:  10px;
+  -webkit-border-radius: 10px;
+  margin-top: auto;
+  margin-bottom: auto;
 }
 
 

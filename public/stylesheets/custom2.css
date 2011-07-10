@@ -1,7 +1,16 @@
+html, body, .container, section.round {
+  height: 100%;
+  margin: 0;
+  padding: 0;
+  border: none; }
+
 body {
   font-family: Geneva;
   color: #333333;
-  background-color: #cccccc; }
+  background-color: #663300; }
+
+.container {
+  background-color: #663300; }
 
 /* header and footer navigation menus */
 .menu {
@@ -40,11 +49,15 @@ footer {
 
 /* jeopardy game table */
 table.jeopardy {
-  border: 25px groove #cc9933;
+  border: 25px solid #cc9933;
+  background-color: white;
   width: 90%;
+  height: 90%;
   margin-left: auto;
   margin-right: auto;
-  cursor: move; }
+  cursor: move;
+  -moz-border-radius: 20px;
+  -webkit-border-radius: 20px; }
   table.jeopardy tr {
     text-align: center; }
     table.jeopardy tr td {
@@ -52,17 +65,47 @@ table.jeopardy {
       color: #ffff33;
       font-weight: bold;
       font-size: 40px;
+      text-shadow: black 2px 2px 2px;
       text-transform: uppercase;
+      -moz-border-radius: 10px;
+      -webkit-border-radius: 10px;
       border: 4px solid #000033;
-      padding: 0px;
-      width: 15%;
-      height: 80px; }
+      padding: 0px; }
       table.jeopardy tr td:hover {
-        background-color: #cc66ff; }
+        background-color: #0066ff;
+        color: #ffff66; }
   table.jeopardy tr.categories td {
     color: white;
-    border-bottom: 25px groove #cc9933;
-    padding: 0px;
-    font-size: 100%; }
+    font-size: 100%;
+    border-width: 8px; }
     table.jeopardy tr.categories td:hover {
-      background-color: #003399; }
+      background-color: #003399;
+      color: white; }
+
+/* question pop-ups */
+div.question {
+  background-color: #003399;
+  color: white;
+  font-weight: bold;
+  font-size: 40px;
+  text-transform: uppercase;
+  -moz-border-radius: 10px;
+  -webkit-border-radius: 10px;
+  padding: 20px;
+  padding-top: 40px; }
+  div.question ul {
+    padding: 0px;
+    margin-top: 20px;
+    font-weight: normal;
+    font-size: 15px; }
+    div.question ul li {
+      display: inline-block;
+      margin: 5px; }
+      div.question ul li:hover {
+        color: #cc6600; }
+
+.blockMsg {
+  -moz-border-radius: 10px;
+  -webkit-border-radius: 10px;
+  margin-top: auto;
+  margin-bottom: auto; }

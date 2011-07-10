@@ -8,10 +8,10 @@
   - 5.times do |i|
     %tr
       - 6.times do
-        %td
-          - question_path = question_path(@round.questions[q])
-          - question_id = @round.questions[q].id
-          %span{:id => "id-question-#{question_id}",:onclick => "ShowQuestion(this,'#{question_path}')"}
+        - question_path = question_path(@round.questions[q])
+        - question_id = @round.questions[q].id
+        %td{:onclick => "ShowQuestion('#{question_path}')"}
+          %span{:id => "id-question-#{question_id}"}
             = "$#{(i+1)*100}"
         - q+=1
 #reply

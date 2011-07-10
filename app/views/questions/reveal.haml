@@ -1,4 +1,5 @@
-= @question.answer
-%br
-  %span{:onclick=> "ShowQuestionBoard()"}
-    Back to Board
+%div.question
+  = @question.answer
+  %ul
+    %li{:onclick=> "ShowQuestionBoard()"}
+      Back to Board
