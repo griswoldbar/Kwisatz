@@ -1,6 +1,7 @@
 class RoundsController < ApplicationController
    
   def show
+    @title = "Round #{params[:id]}"
     @round = Round.find(params[:id])
     @questions = @round.questions
     @genres=["History", "Geography", "Cinema", "Science", "Literature", "Music"]
