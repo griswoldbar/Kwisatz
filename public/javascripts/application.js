@@ -30,7 +30,7 @@
   
   function SaveQuestion(obj, round_id){    
     category_id=$(obj).parent().attr('category');
-    category=$("#category"+category_id).val();
+    category_name=$("#category"+category_id).val();
     difficulty=$(obj).parent().attr('difficulty');
     text=$('#id-question-text').val();
     answer=$('#id-question-answer').val();
@@ -38,7 +38,6 @@
       '/roundquestions',
       { question:
         { 
-          category:category,
           difficulty:difficulty,
           text:text,
           answer:answer,
@@ -46,6 +45,10 @@
         roundquestion:
         {
           round_id:round_id
+        },
+        category:
+        {
+          category_name:category_name
         }
       },
       function(data){

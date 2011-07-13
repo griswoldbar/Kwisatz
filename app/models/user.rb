@@ -1,4 +1,4 @@
-# == Schema Information
+ # == Schema Information
 # Schema version: 20110208104019
 #
 # Table name: users

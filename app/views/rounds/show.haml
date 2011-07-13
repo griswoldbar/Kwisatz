@@ -2,19 +2,13 @@
 %h1
 %table.jeopardy{:id => "id-quiz-round-1"}
   %tr.categories
-    - categories = Array.new
-    - @round.questions.each do |question|
-      - if ! categories.include?(question.category)
-        - categories << question.category
-    - categories.each do |category|
+    - @round.categories.each do |category|
       %td
-        = category
-  - diff=0
-  - @round.category_count.times do
-    - categ=0
+        = category.name
+  - @round.questions_per_category.times do |diff|
     %tr
-      - @round.questions_per_category.times do
-        - question=@round.questions.select{|q| q.category==categories[categ] && q.difficulty==diff}[0]
+      - @round.category_count.times do |categ|        
+        - question=@round.questions.select{|q| q.category.name==@round.categories[categ].name && q.difficulty==diff}[0]
         - question_path = question_path(question)
         - question_id = question.id
         %div
@@ -22,6 +16,4 @@
             %span
               %span{:id => "id-question-#{question_id}"}
                 = "$#{(diff+1)*100}"
-          - categ+=1
-    - diff+=1
 #reply

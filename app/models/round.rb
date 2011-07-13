@@ -15,8 +15,9 @@ class Round < ActiveRecord::Base
 
 
   has_many :roundquestions
+  has_many :categoryrounds
   has_many :questions, :through => :roundquestions
-  accepts_nested_attributes_for :questions, :allow_destroy => true
+  has_many :categories, :through => :categoryrounds
 
 
   
