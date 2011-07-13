@@ -1,4 +1,10 @@
 = render 'shared/error_messages', :object => f.object
 .field
-  = f.label :name
+  = f.label "round name"
   = f.text_field :name
+  %br
+  = f.label "number of categories"
+  = f.text_field :category_count
+  %br
+  = f.label "questions per category"
+  = f.text_field :questions_per_category

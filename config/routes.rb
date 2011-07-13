@@ -1,12 +1,18 @@
 Kwisatz::Application.routes.draw do
 
   resources :users
-  resources :rounds
+  resources :rounds do
+    member do
+      get :make_questions
+    end
+  end
   resources :questions do
     member do
       get :reveal
     end
   end
+  
+  resources :roundquestions
   
   
   

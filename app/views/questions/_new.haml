@@ -1,0 +1,6 @@
+= form_for(@round.questions[qid]) do |f|
+  = f.label "Question: #{qid+1}"
+  = f.text_field :text
+  %br
+  = f.label "Answer: "
+  = f.text_field :answer

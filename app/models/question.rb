@@ -1,5 +1,5 @@
 # == Schema Information
-# Schema version: 20110224204344
+# Schema version: 20110712183301
 #
 # Table name: questions
 #
@@ -8,10 +8,11 @@
 #  answer     :string(255)
 #  created_at :datetime
 #  updated_at :datetime
+#  category   :string(255)
+#  difficulty :integer
 #
 
 class Question < ActiveRecord::Base
-
-  has_many :round_questions
-  has_many :rounds, :through => :round_questions
+  has_many :roundquestions
+  has_many :rounds, :through => :roundquestions
 end

@@ -1,0 +1,21 @@
+%table.jeopardy{:id => "make_quiz"}
+  %tr.categories
+    - @round.category_count.times do |i|
+      %td
+        .field
+          %label Category
+          %input{:id => "category#{i}"}
+  - @round.questions_per_category.times do |difficulty|
+    %tr
+      - @round.category_count.times do |cat|
+        %td{:id => "question#{cat}-#{difficulty}", 
+            :onclick => "EditQuestion('#{cat}','#{difficulty}')"}
+          &nbsp;
+#question-form.cant-be-seen
+  .field 
+    %label Question
+    %input{:id => "id-question-text"}
+  .field
+    %label Answer
+    %input{:id => "id-question-answer"}
+  %input{:type => :button, :onclick => "SaveQuestion(this,'#{@round.id}')"}

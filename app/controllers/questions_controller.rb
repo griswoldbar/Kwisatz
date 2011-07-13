@@ -11,13 +11,20 @@ class QuestionsController < ApplicationController
   end
   
   def new
-    
+    @question=Question.new
     
   end
 
   def create
-    
-    
+   @question = Question.new(params[:question])
+    if @question.save
+      render :nothing => true
+    else
+      render 'home'
+    end
   end
+    
+  
+
   
 end

@@ -1,18 +1,27 @@
 !!! Strict
+%h1
 %table.jeopardy{:id => "id-quiz-round-1"}
   %tr.categories
-    - @genres.each do |genre|
+    - categories = Array.new
+    - @round.questions.each do |question|
+      - if ! categories.include?(question.category)
+        - categories << question.category
+    - categories.each do |category|
       %td
-        = genre
-  - q=0
-  - 5.times do |i|
+        = category
+  - diff=0
+  - @round.category_count.times do
+    - categ=0
     %tr
-      - 6.times do
-        - question_path = question_path(@round.questions[q])
-        - question_id = @round.questions[q].id
-        %td{:onclick => "ShowQuestion('#{question_path}')"}
-          %span{:id => "id-question-#{question_id}"}
-            = "$#{(i+1)*100}"
-        - q+=1
+      - @round.questions_per_category.times do
+        - question=@round.questions.select{|q| q.category==categories[categ] && q.difficulty==diff}[0]
+        - question_path = question_path(question)
+        - question_id = question.id
+        %div
+          %td{:id => "questionbox-#{question_id}", :onclick => "ShowQuestion('#{question_path}')"}
+            %span
+              %span{:id => "id-question-#{question_id}"}
+                = "$#{(diff+1)*100}"
+          - categ+=1
+    - diff+=1
 #reply
-  

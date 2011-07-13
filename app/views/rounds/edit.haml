@@ -1,0 +1,10 @@
+%h1 Edit Round
+= form_for(@round) do |f|
+  = render 'shared/error_messages', :object => f.object
+  %table.jeopardy{:id => "id-quiz-round"}
+    %tr.categories
+      - @round.category_count.times do |category_id|
+        %td
+          = render 'categories', :category_id => category_id
+  .actions
+    = f.submit "Create round"
